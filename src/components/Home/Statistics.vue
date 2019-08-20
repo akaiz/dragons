@@ -1,13 +1,12 @@
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import "vue-toast-notification/dist/index.css";
-import { positiveData, negativeData } from "../../util/training";
-import { Game } from "../../interfaces/GameInterfaces";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { positiveData, negativeData } from '../../util/training';
+import { Game } from '../../interfaces/GameInterfaces';
 @Component
 export default class Statistics extends Vue {
-  @Prop() gameData?: Game;
-  @Prop({ default: "" }) gameId?: string;
-  @Prop({ default: false }) readonly lost?: boolean;
+  @Prop() public gameData?: Game;
+  @Prop({ default: '' }) public gameId?: string;
+  @Prop({ default: false }) public readonly lost?: boolean;
 }
 </script>
 <template>

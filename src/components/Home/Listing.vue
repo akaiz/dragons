@@ -1,13 +1,12 @@
 <script lang="ts">
-import { Component, Prop, Vue, Emit } from "vue-property-decorator";
-import "vue-toast-notification/dist/index.css";
-import { positiveData, negativeData } from "../../util/training";
-import { adStatus } from "./util/helpers";
-import { GameAd } from "../../interfaces/GameInterfaces";
+import { Component, Prop, Vue, Emit } from 'vue-property-decorator';
+import { positiveData, negativeData } from '../../util/training';
+import { adStatus } from './util/helpers';
+import { GameAd } from '../../interfaces/GameInterfaces';
 @Component
 export default class Listing extends Vue {
-  @Prop() messages: any;
-  status(message: GameAd): string {
+  @Prop() public messages: any;
+  public status(message: GameAd): string {
     return adStatus(message);
   }
 }

@@ -1,12 +1,11 @@
-<style src="./styles.scss" lang="scss"></style>
 <script lang="ts">
-import { Component, Prop, Vue, Emit } from "vue-property-decorator";
-import "vue-toast-notification/dist/index.css";
-import { positiveData, negativeData } from "../../util/training";
-import { Function } from "lodash";
+import { Component, Prop, Vue, Emit, Watch } from 'vue-property-decorator';
+import 'vue-toast-notification/dist/index.css';
+import { positiveData, negativeData } from '../../util/training';
+import { ShopItem} from '../../interfaces/GameInterfaces';
 @Component
 export default class Shop extends Vue {
-  @Prop() shopItems: any;
+  @Prop() public shopItems?: ShopItem[];
 }
 </script>
 <template>
@@ -23,7 +22,7 @@ export default class Shop extends Vue {
         <p class="my-1"><b>Name:</b> {{ item.name }}</p>
         <p class="my-1"><b>Cost:</b> {{ item.cost }}</p>
         <button
-          class="my-1 btn btn-secondary col-xs-12 col-md-1 py-0 px-2"
+          class="my-1 btn btn-secondary col-xs-12 col-md-2 py-0 px-2"
           v-on:click="$emit('shopItem', item)"
         >
           Buy
